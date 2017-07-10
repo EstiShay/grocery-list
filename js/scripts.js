@@ -1,9 +1,8 @@
 $(document).ready(function() {
-
+  var groceries = [];
 
   $("#shoppingForm").submit(function(event) {
     // groceries.push($("input#item").val());
-    var groceries = [];
 
     var itemInput = $("input#item").val();
 
@@ -11,11 +10,21 @@ $(document).ready(function() {
       alert("Please enter an item name.")
     } else {
       groceries.push($("input#item").val());
-      $("p").append(groceries);
     }
 
+    groceries.sort();
+
+    var upperGroceries = groceries.map(function(grocery) {
+      return grocery.toUpperCase();
+    });
+    alert(upperGroceries);
+
     event.preventDefault();
+
   });
+
+
+
 
 
 
