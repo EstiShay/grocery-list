@@ -17,7 +17,13 @@ $(document).ready(function() {
     var upperGroceries = groceries.map(function(grocery) {
       return grocery.toUpperCase();
     });
-    alert(upperGroceries);
+    // alert(upperGroceries);
+
+    $('ul').empty();
+
+    upperGroceries.forEach(function(grocery) {
+      $("ul").append("<li>" + grocery + "</li>");
+    });
 
     event.preventDefault();
 
